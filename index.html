@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC
+        "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <title>YUI Skin Customization Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="yui-2.7.0//build/reset/reset-min.css">
+    <link rel="stylesheet" type="text/css" href="yui-2.7.0//build/fonts/fonts-min.css">
+    <link rel="stylesheet" type="text/css" href="custom/button/assets/skins/daw/button.css">
+    <link rel="stylesheet" type="text/css" href="custom/slider/assets/skins/daw/slider.css">
+    <link rel="stylesheet" type="text/css" href="css/skin.css">
+</head>
+
+<body class="custom-skin-daw">
+    <div id="app">
+        <div id="outputArea"></div>
+
+        <!-- Use div rather than real input to avoid seeing it being replaced. -->
+        <div id="powerButton"></div>
+
+        <div id="inputArea">
+            <fieldset>
+                <legend>Inputs</legend>
+                <div class="buttonSet">
+                    <button>L - Main</button>
+                    <button>Main - R</button>
+                </div>
+                <div class="buttonSet">
+                    <button>L - Instr</button>
+                    <button>Instr - R</button>
+                </div>
+                <div class="buttonSet">
+                    <button>L - Mic 1</button>
+                    <button>Mic 1 - R</button>
+                </div>
+                <div class="buttonSet">
+                    <button>L - Mic 2</button>
+                    <button>Mic 2 - R</button>
+                </div>
+                <div class="buttonSet">
+                    <button>L - MIDI</button>
+                    <button>MIDI - R</button>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Filters</legend>
+                <div class="buttonSet">
+                    <button>F1</button>
+                </div>
+                <div class="buttonSet">
+                    <button>F2</button>
+                </div>
+                <div class="buttonSet">
+                    <button>F3</button>
+                </div>
+                <div class="buttonSet">
+                    <button>F4</button>
+                </div>
+                <div class="buttonSet">
+                    <button>F5</button>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Effects</legend>
+                <div class="buttonSet">
+                    <button>E1</button>
+                </div>
+                <div class="buttonSet">
+                    <button>E2</button>
+                </div>
+                <div class="buttonSet">
+                    <button>E3</button>
+                </div>
+                <div class="buttonSet">
+                    <button>E4</button>
+                </div>
+                <div class="buttonSet">
+                    <button>E5</button>
+                </div>
+            </fieldset>
+        </div>
+
+        <div id="channelMixer">
+            <script type="text/javascript">
+var ii, channelCount = 16;   // TODO: re-use constant defined in js/skin.js
+
+for (ii = 1; ii <= channelCount; ii++) {
+    document.write('<div class="slider">\n');
+    document.write('    <div id="slider' + ii + '" class="channelSlider" tabindex="-1">\n');
+    document.write('        <div id="thumb' + ii + '" class="channelSliderThumb"><img src="custom/slider/assets/skins/daw/thumb-bar.gif"></div>\n');
+    document.write('    </div>\n');
+    document.write('    <div class="channelNum">' + ii + '</div>\n');
+    document.write('    <div id="mute' + ii + '" class="muteButton"></div>\n');
+    document.write('</div>\n');
+}
+            </script>
+        </div>
+
+        <fieldset id="options" style="display: none">
+            <legend>Recommendation options</legend>
+
+            <div class="option">
+                <p><label for="numTopTagsToGetRecosFor">Only use the top T tags:</label></p>
+                <p><input type="text" name="numTopTagsToGetRecosFor" id="numTopTagsToGetRecosFor" value="33"></p>
+                <p class="hint">lower number is quicker</p>
+            </div>
+
+            <div class="option">
+                <p class="checkbox">
+                    <input type="checkbox" name="inclTvSeries" id="inclTvSeries">
+                    <label for="inclTvSeries">Recommend TV series</label>
+                </p>
+            </div>
+
+        </fieldset>
+    </div>
+
+    <script type="text/javascript" src="yui-2.7.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/element/element-min.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/button/button-min.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/animation/animation-min.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/dragdrop/dragdrop-min.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/json/json-min.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/datasource/datasource-min.js"></script>
+<!-- TODO: should be min iso debug -->
+    <script type="text/javascript" src="yui-2.7.0/build/charts/charts-debug.js"></script>
+    <script type="text/javascript" src="yui-2.7.0/build/slider/slider-min.js"></script>
+    <script type="text/javascript" src="js/ChannelMixer.js"></script>
+    <script type="text/javascript" src="js/InputSimulator.js"></script>
+    <script type="text/javascript" src="js/OutputDisplay.js"></script>
+    <script type="text/javascript" src="js/skin.js"></script>
+</body>
+</html>

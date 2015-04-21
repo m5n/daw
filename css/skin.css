@@ -1,0 +1,104 @@
+body {
+    margin: 1em;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+div#app {
+    background-image: url(../img/appBg.png);
+    width: 900px;
+    height: 600px;
+}
+
+div#powerButton {
+    position: relative;
+    top: 9px;
+    left: 832px;;
+    /*float: right;*/
+    /*margin: 52px 7px;*/
+}
+
+div#outputArea {
+    float: right;
+    margin: 52px 9px 0 0;
+    width: 441px;
+    height: 241px;
+}
+
+div#inputArea {
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    margin: 3em 1em;
+}
+
+div#inputArea fieldset {
+    float: left;
+    border: 1px solid white;
+    margin: 0 1em;
+    padding: 0 1.5em 1em 1.5em;
+    *padding: 0 1.25em 1em 1.25em;
+    text-align: center;
+}
+
+div#inputArea fieldset legend {
+    color: white;
+    padding: 0.25em;
+}
+
+div.buttonSet {
+    margin: 1em 0;
+}
+
+div#channelMixer {
+    float: left;
+    margin: 0 1em;
+    *margin: 0 0.5em;
+    margin-top: 19px;
+    *margin-top: 16px;
+    padding: 0.5em;
+    padding-bottom: 1.75em;
+    width: 858px;
+}
+
+div.slider {
+    float: left;
+    margin: 0 0.1em;
+}
+
+div.channelSlider {
+    position: relative;
+    left: 0.25em;
+    background: url(../custom/slider/assets/skins/daw/daw-bg.gif) 12px 0 no-repeat;
+    height: 194px;
+    width: 36px; 
+
+    /* Remove focus border around slider on Firefox. */
+    outline: 0px none;
+}
+
+div.channelSliderThumb {
+    cursor: default;
+    position: relative;
+    top: 174px;
+}
+
+div.channelNum {
+    color: white;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0.75em 0 0.5em 0;
+}
+
+/* Make buttons look like IE buttons... TODO: why is this necessary? */
+.custom-skin-daw .yui-button button, .custom-skin-daw .yui-button a {
+    padding: 0 6px;
+    *padding: 0 10px;   /* Override for IE7 to use YUI default. */
+
+    /* TODO: Remove focus border around slider on Firefox. */
+    outline: 0px none;   /* This doesn't do the trick... */
+}
